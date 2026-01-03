@@ -19,11 +19,17 @@
       - [Image example output](#image-example-output)
     - [Fuji-inspect](#fuji-inspect)
       - [Inspect example output](#inspect-example-output)
+  - [Contributing](#contributing)
+  - [License](#license)
 
     <!--toc:end-->
 
 Two Bash scripts for extracting and inspecting Fujifilm film simulation recipe
 data from `.RAF` and `.JPG` files.
+
+Film simulations are Fujifilm's unique color profiles that replicate the look of
+classic film stocks. These tools help you extract and visualize the recipe
+settings embedded in your Fujifilm images.
 
 > [!WARNING]
 > These scripts have currently only been tested with images from a Fujifilm X-M5.
@@ -59,11 +65,17 @@ sudo apt-get install libimage-exiftool-perl imagemagick
 ```
 
 > [!NOTE]
-> `imagemagick` is only required for the card generator script.\_
+> `imagemagick` is only required for the card generator script.
 
 ## Installation and Setup
 
-1. Clone the repository.
+1. Clone the repository:
+
+```bash
+git clone https://github.com/shadovo/fujifilm-recipe-tools.git
+cd fujifilm-recipe-tools
+```
+
 2. Make the scripts executable:
 
 ```bash
@@ -153,3 +165,13 @@ fuji-inspect DSCF1001.JPG
 #### Inspect example output
 
 ![Example recipe terminal output](./docs/fujifilm-recipe-inspector.png)
+
+## Contributing
+
+Contributions are welcome! If you have tested these scripts with other Fujifilm
+camera models, please open an issue or pull request to help expand compatibility.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file
+for details.
