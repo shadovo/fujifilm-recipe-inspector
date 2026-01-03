@@ -12,10 +12,15 @@
   - [Dependencies](#dependencies)
     - [macOS (Homebrew)](#macos-homebrew)
     - [Linux (Debian/Ubuntu)](#linux-debianubuntu)
-  - [Installation & Setup](#installation-%26-setup)
+  - [Installation & Setup](#installation-and-setup)
     - [Global Access (Symlinking)](#global-access-symlinking)
   - [Usage](#usage)
-  <!--toc:end-->
+    - [Fuji-card](#fuji-card)
+      - [Image example output](#image-example-output)
+    - [Fuji-inspect](#fuji-inspect)
+      - [Inspect example output](#inspect-example-output)
+
+    <!--toc:end-->
 
 Two Bash scripts for extracting and inspecting Fujifilm film simulation recipe
 data from `.RAF` and `.JPG` files.
@@ -56,7 +61,7 @@ sudo apt-get install libimage-exiftool-perl imagemagick
 > [!NOTE]
 > `imagemagick` is only required for the card generator script.\_
 
-## Installation & Setup
+## Installation and Setup
 
 1. Clone the repository.
 2. Make the scripts executable:
@@ -80,14 +85,71 @@ You can now run them using `fuji-card` or `fuji-inspect`.
 
 ## Usage
 
+### Fuji-card
+
 **Generate a visual recipe card:**
 
 ```bash
-./fujifilm-recipe-card.sh DSCF1001.RAF
+./fujifilm-recipe-card.sh DSCF1001.JPG
 ```
 
-**Inspect settings in terminal:**
+or with the symlink
+
+```bash
+fuji-card DSCF1001.JPG
+```
+
+#### Image example output
+
+<!-- markdownlint-disable MD033 -->
+<table>
+  <thead>
+    <tr>
+      <th>Original Image</th>
+      <th>Recipe Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="./docs/DSCF5707.JPG"
+          alt="Original velvia fujifilm photo"
+          width="500">
+      </td>
+      <td>
+        <img src="./docs/DSCF5707-recipe.jpg"
+          alt="Recipe image for fujifilm velvia"
+          width="500">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="./docs/DSCF5314.JPG"
+          alt="Original Acros fujifilm photo"
+          width="500">
+      </td>
+      <td>
+        <img src="./docs/DSCF5314-recipe.jpg"
+          alt="Recipe image for fujifilm acros"
+          width="500">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- markdownlint-enable MD033 -->
+
+### Fuji-inspect
 
 ```bash
 ./fujifilm-recipe-inspector.sh DSCF1001.JPG
 ```
+
+or with the symlink
+
+```bash
+fuji-inspect DSCF1001.JPG
+```
+
+#### Inspect example output
+
+![Example recipe terminal output](./docs/fujifilm-recipe-inspector.png)
